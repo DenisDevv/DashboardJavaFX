@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController {
+public class Script {
     @FXML
     private TextField username;
     @FXML
@@ -31,8 +31,8 @@ public class HelloController {
     public void dashboard() throws IOException {
         ((Stage)username.getScene().getWindow()).close();
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 550);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1024, 768);
         stage.setResizable(false);
         stage.setTitle("DASHBOARD | Dashboard Aziendale");
         stage.setScene(scene);
