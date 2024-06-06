@@ -13,7 +13,7 @@
    <children>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="43.0" prefWidth="1024.0" style="-fx-background-color: #8e7cc3;">
          <children>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="DIPENDENTI" textFill="#20124d">
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#dipendenti" style="-fx-background-color: #8e7cc3;" text="DIPENDENTI" textFill="#20124d">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -24,7 +24,7 @@
                   <Insets left="100.0" right="100.0" />
                </FlowPane.margin>
             </Button>
-          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="HOME" textFill="#20124d">
+          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#home" style="-fx-background-color: #8e7cc3;" text="HOME" textFill="#f6b26b">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -35,7 +35,7 @@
                   <Insets left="100.0" right="100.0" />
                </FlowPane.margin>
             </Button>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#regAtt" style="-fx-background-color: #8e7cc3;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
