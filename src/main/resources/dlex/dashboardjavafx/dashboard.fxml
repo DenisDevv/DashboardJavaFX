@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" spacing="20.0" style="-fx-background-color: #191526;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.Script">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<VBox alignment="TOP_CENTER" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" spacing="20.0" style="-fx-background-color: #191526;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.Script">
+   <children>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="43.0" prefWidth="1024.0" style="-fx-background-color: #8e7cc3;">
+         <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="DIPENDENTI" textFill="#20124d">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <FlowPane.margin>
+                  <Insets left="100.0" right="100.0" />
+               </FlowPane.margin>
+            </Button>
+          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="HOME" textFill="#20124d">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="100.0" right="100.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#test" style="-fx-background-color: transparenjt;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <FlowPane.margin>
+                  <Insets left="100.0" right="100.0" />
+               </FlowPane.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+   </children>
 </VBox>

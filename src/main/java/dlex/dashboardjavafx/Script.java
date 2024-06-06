@@ -28,6 +28,10 @@ public class Script {
             message.setText("Credenziali errate");
         }
     }
+    @FXML
+    protected void test() {
+        System.out.println("Test");
+    }
     public void dashboard() throws IOException {
         ((Stage)username.getScene().getWindow()).close();
         Stage stage = new Stage();
