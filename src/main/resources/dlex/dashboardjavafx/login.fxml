@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="BOTTOM_CENTER" maxHeight="550.0" maxWidth="400.0" minHeight="550.0" minWidth="400.0" spacing="20.0" style="-fx-background-color: #191526; -fx-background-radius: 20px; -fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="username" alignment="CENTER" maxHeight="30.0" maxWidth="160.0" minWidth="-Infinity" prefHeight="30.0" prefWidth="160.0" promptText="Username" style="-fx-background-color: #CDCDCD;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSWORD">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="password" alignment="CENTER" maxHeight="30.0" maxWidth="160.0" prefHeight="30.0" promptText="Password" style="-fx-background-color: CDCDCD;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></PasswordField>
+      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #8e7cc3; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="LOGIN" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="100.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
