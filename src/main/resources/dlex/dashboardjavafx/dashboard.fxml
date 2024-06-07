@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.embed.swing.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
@@ -9,7 +12,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" spacing="20.0" style="-fx-background-color: #191526;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.Script">
+<VBox alignment="TOP_CENTER" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #191526;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.Script">
    <children>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="43.0" prefWidth="1024.0" style="-fx-background-color: #8e7cc3;">
          <children>
@@ -51,5 +54,34 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </FlowPane>
+      <Pane prefHeight="776.0" prefWidth="1024.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane prefHeight="331.0" prefWidth="400.0" style="-fx-background-radius: 10px; -fx-background-color: #e69138;">
+               <children>
+                  <Button layoutX="228.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #8e7cc3; -fx-background-radius: 10px;" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="64.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;" text="-" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="saldo" layoutX="162.0" layoutY="72.0" style="-fx-background-color: #7f600020; -fx-background-radius: 10px;" text="0$" textAlignment="CENTER" textFill="#20124d">
+                     <font>
+                        <Font name="Arial Bold" size="50.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </VBox.margin>
+      </Pane>
    </children>
 </VBox>
