@@ -1,87 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.media.*?>
-<?import javafx.embed.swing.*?>
 <?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.web.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.embed.swing.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox alignment="TOP_CENTER" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #191526;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlex.dashboardjavafx.Script">
    <children>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="43.0" prefWidth="1024.0" style="-fx-background-color: #8e7cc3;">
+      <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#dipendenti" style="-fx-background-color: #8e7cc3;" text="DIPENDENTI" textFill="#20124d">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <FlowPane.margin>
-                  <Insets left="100.0" right="100.0" />
-               </FlowPane.margin>
-            </Button>
-          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#home" style="-fx-background-color: #8e7cc3;" text="HOME" textFill="#f6b26b">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <FlowPane.margin>
-                  <Insets left="100.0" right="100.0" />
-               </FlowPane.margin>
-            </Button>
-            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#regAtt" style="-fx-background-color: #8e7cc3;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <FlowPane.margin>
-                  <Insets left="100.0" right="100.0" />
-               </FlowPane.margin>
-            </Button>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </FlowPane>
-      <Pane prefHeight="776.0" prefWidth="1024.0" VBox.vgrow="ALWAYS">
-         <children>
-            <Pane prefHeight="331.0" prefWidth="400.0" style="-fx-background-radius: 10px; -fx-background-color: #e69138;">
+            <VBox prefHeight="882.0" prefWidth="1024.0">
                <children>
-                  <Button layoutX="228.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #8e7cc3; -fx-background-radius: 10px;" text="+" textFill="WHITE">
+                  <FlowPane alignment="CENTER" columnHalignment="CENTER" maxWidth="1024.0" prefHeight="46.0" prefWidth="1020.0" style="-fx-background-color: #8e7cc3;">
+                     <children>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#dipendenti" style="-fx-background-color: #8e7cc3;" text="DIPENDENTI" textFill="#20124d">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <FlowPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </FlowPane.margin>
+                        </Button>
+                      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#home" style="-fx-background-color: #8e7cc3;" text="HOME" textFill="#f6b26b">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                           <FlowPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#regAtt" style="-fx-background-color: #8e7cc3;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <FlowPane.margin>
+                              <Insets left="100.0" right="100.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </FlowPane>
+                  <Pane prefHeight="776.0" prefWidth="1024.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Pane prefHeight="331.0" prefWidth="400.0" style="-fx-background-radius: 10px; -fx-background-color: #e69138;">
+                           <children>
+                              <Button layoutX="228.0" layoutY="292.0" mnemonicParsing="false" onAction="#aggiungiSaldo" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #8e7cc3; -fx-background-radius: 10px;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="64.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;" text="-" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="saldo" alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="72.0" maxWidth="400.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #7f600020; -fx-background-radius: 10px;" text="0$" textFill="#20124d" wrapText="true">
+                                 <font>
+                                    <Font name="Arial Bold" size="50.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ScrollPane cacheHint="SPEED" hbarPolicy="NEVER" layoutX="564.0" pannable="true" prefHeight="331.0" prefWidth="400.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px 0px 0px 10px;">
+                           <content>
+                              <ListView maxWidth="377.0" prefHeight="571.0" prefWidth="377.0" style="-fx-background-color: #674ea7;" />
+                           </content>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </ScrollPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                  </Pane>
+               </children>
+            </VBox>
+            <Pane fx:id="inputAggQuantita" prefHeight="768.0" prefWidth="1024.0" scaleX="0.0" scaleY="0.0" visible="false">
+               <children>
+                  <Pane opacity="0.97" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #1a1726;" />
+                  <Button layoutX="462.0" layoutY="717.0" mnemonicParsing="false" onAction="#aggiungiQuantita" prefHeight="37.0" prefWidth="101.0" style="-fx-background-color: #f1c232; -fx-background-radius: 10PX;" text="CONFERMA">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="988.0" layoutY="10.0" onMouseClicked="#close" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></SVGPath>
+                  <TextField fx:id="addQuantita" alignment="CENTER" layoutX="423.0" layoutY="361.0" prefHeight="47.0" prefWidth="179.0" promptText="Inserisci Quantita'" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;">
                      <font>
                         <Font name="Arial Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="64.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;" text="-" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="saldo" layoutX="162.0" layoutY="72.0" style="-fx-background-color: #7f600020; -fx-background-radius: 10px;" text="0$" textAlignment="CENTER" textFill="#20124d">
-                     <font>
-                        <Font name="Arial Bold" size="50.0" />
                      </font>
                      <padding>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
-                  </Label>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+               </children>
+            </Pane>
+            <Pane fx:id="inputRimQuantita" prefHeight="768.0" prefWidth="1024.0" scaleX="0.0" scaleY="0.0" visible="false">
+               <children>
+                  <Pane opacity="0.97" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #1a1726;" />
+                  <Button layoutX="462.0" layoutY="717.0" mnemonicParsing="false" onAction="#aggiungiQuantita" prefHeight="37.0" prefWidth="101.0" style="-fx-background-color: #f1c232; -fx-background-radius: 10PX;" text="CONFERMA">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="988.0" layoutY="10.0" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0" />
+                  <TextField alignment="CENTER" layoutX="423.0" layoutY="361.0" prefHeight="47.0" prefWidth="179.0" promptText="Inserisci Quantita'" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </TextField>
                </children>
             </Pane>
          </children>
-         <VBox.margin>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-         </VBox.margin>
       </Pane>
    </children>
 </VBox>

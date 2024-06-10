@@ -1,5 +1,6 @@
 package dlex.dashboardjavafx;
 
+import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +10,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -21,11 +25,13 @@ public class Script {
     @FXML
     private Label message;
     @FXML
-    private CategoryAxis grafico;
+    private Label saldo;
     @FXML
-    private NumberAxis graficoNum;
+    private TextField addQuantita;
     @FXML
     private LineChart<String, Number> lineChart;
+    @FXML
+    private Pane inputAggQuantita;
     @FXML
     protected void login() {
         if (username.getText().equals("denis") && password.getText().equals("denis1234")) {
@@ -46,25 +52,8 @@ public class Script {
         stage.setResizable(false);
         stage.setTitle("DASHBOARD | Dashboard Aziendale");
         stage.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
         stage.show();
-    }
-    @FXML
-    protected void graficoFunz() {
-        grafico.setLabel("Mesi");
-        graficoNum.setLabel("Vendite");
-        lineChart.setTitle("Vendite Mensili");
-        XYChart.Series<String, Number> series = new XYChart.Series<>();
-        series.setName("Vendite");
-        series.getData().add(new XYChart.Data<>("Gennaio", 1000));
-        series.getData().add(new XYChart.Data<>("Febbraio", 2000));
-        series.getData().add(new XYChart.Data<>("Marzo", 3000));
-        series.getData().add(new XYChart.Data<>("Aprile", 4000));
-        series.getData().add(new XYChart.Data<>("Maggio", 1000));
-        series.getData().add(new XYChart.Data<>("Giugno", 6000));
-        series.getData().add(new XYChart.Data<>("Luglio", 5000));
-        series.getData().add(new XYChart.Data<>("Agosto", 8000));
-        series.getData().add(new XYChart.Data<>("Settembre", 9000));
-        lineChart.getData().add(series);
     }
     @FXML
     protected void dipendenti(){
@@ -73,10 +62,44 @@ public class Script {
     @FXML
     protected void home(){
         System.out.println("Home");
-        graficoFunz();
     }
     @FXML
     protected void regAtt(){
         System.out.println("RegAtt");
+    }
+    @FXML
+    protected void aggiungiSaldo(){
+        popIn(inputAggQuantita);
+    }
+    @FXML
+    protected void aggiungiQuantita() {
+        double saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
+        double quantita = Integer.parseInt(addQuantita.getText());
+        addQuantita.setText("");
+        saldo.setText(saldoAttuale + quantita + "$");
+        popOut(inputAggQuantita);
+    }
+    @FXML
+    protected void close() {
+        popOut(inputAggQuantita);
+    }
+    public void popIn(Pane pane) {
+        pane.setVisible(true);
+        ScaleTransition st = new ScaleTransition(Duration.millis(100), pane);
+        st.setFromX(0);
+        st.setFromY(0);
+        st.setToX(1);
+        st.setToY(1);
+        st.play();
+    }
+
+    public void popOut(Pane pane) {
+        ScaleTransition st = new ScaleTransition(Duration.millis(100), pane);
+        st.setFromX(1);
+        st.setFromY(1);
+        st.setToX(0);
+        st.setToY(0);
+        st.setOnFinished(e -> pane.setVisible(false));
+        st.play();
     }
 }
