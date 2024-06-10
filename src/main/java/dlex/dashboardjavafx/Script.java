@@ -73,8 +73,8 @@ public class Script {
     }
     @FXML
     protected void aggiungiQuantita() {
-        double saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
-        double quantita = Integer.parseInt(addQuantita.getText());
+        int saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
+        int quantita = Integer.parseInt(addQuantita.getText());
         addQuantita.setText("");
         saldo.setText(saldoAttuale + quantita + "$");
         popOut(inputAggQuantita);
