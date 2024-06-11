@@ -27,6 +27,9 @@
                            <FlowPane.margin>
                               <Insets left="100.0" right="100.0" />
                            </FlowPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                       <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#home" style="-fx-background-color: #8e7cc3;" text="HOME" textFill="#f6b26b">
                            <padding>
@@ -38,6 +41,9 @@
                            <FlowPane.margin>
                               <Insets left="100.0" right="100.0" />
                            </FlowPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#regAtt" style="-fx-background-color: #8e7cc3;" text="REGISTRO ATTIVITÀ" textFill="#20124d">
                            <font>
@@ -49,6 +55,9 @@
                            <FlowPane.margin>
                               <Insets left="100.0" right="100.0" />
                            </FlowPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children>
                      <padding>
@@ -63,23 +72,33 @@
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Button>
-                              <Button layoutX="64.0" layoutY="292.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;" text="-" textFill="WHITE">
+                              <Button layoutX="64.0" layoutY="292.0" mnemonicParsing="false" onAction="#rimuoviSaldo" prefHeight="27.0" prefWidth="101.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;" text="-" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
-                              </Button>
-                              <Label fx:id="saldo" alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="72.0" maxWidth="400.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: #7f600020; -fx-background-radius: 10px;" text="0$" textFill="#20124d" wrapText="true">
-                                 <font>
-                                    <Font name="Arial Bold" size="50.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets left="10.0" right="10.0" />
-                                 </padding>
                                  <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
+                                    <Cursor fx:constant="HAND" />
                                  </cursor>
-                              </Label>
+                              </Button>
+                              <StackPane layoutY="26.0" prefHeight="150.0" prefWidth="400.0">
+                                 <children>
+                                    <Label fx:id="saldo" alignment="CENTER" contentDisplay="CENTER" maxWidth="400.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="58.0" prefWidth="244.0" text="0$" textAlignment="CENTER" textFill="#20124d" wrapText="true">
+                                       <font>
+                                          <Font name="Arial Bold" size="50.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </StackPane>
                            </children>
                         </Pane>
                         <ScrollPane cacheHint="SPEED" hbarPolicy="NEVER" layoutX="564.0" pannable="true" prefHeight="331.0" prefWidth="400.0" style="-fx-background-color: #674ea7; -fx-background-radius: 10px 0px 0px 10px;">
@@ -100,7 +119,7 @@
                   </Pane>
                </children>
             </VBox>
-            <Pane fx:id="inputAggQuantita" prefHeight="768.0" prefWidth="1024.0" scaleX="0.0" scaleY="0.0" visible="false">
+            <Pane fx:id="inputAggQuantita" onKeyPressed="#closeKey" prefHeight="768.0" prefWidth="1024.0" scaleX="0.0" scaleY="0.0" visible="false">
                <children>
                   <Pane opacity="0.97" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #1a1726;" />
                   <Button layoutX="462.0" layoutY="717.0" mnemonicParsing="false" onAction="#aggiungiQuantita" prefHeight="37.0" prefWidth="101.0" style="-fx-background-color: #f1c232; -fx-background-radius: 10PX;" text="CONFERMA">
@@ -111,10 +130,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="988.0" layoutY="10.0" onMouseClicked="#close" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></SVGPath>
                   <TextField fx:id="addQuantita" alignment="CENTER" layoutX="423.0" layoutY="361.0" prefHeight="47.0" prefWidth="179.0" promptText="Inserisci Quantita'" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;">
                      <font>
                         <Font name="Arial Bold" size="15.0" />
@@ -126,18 +141,28 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
+                  <Pane layoutX="984.0" layoutY="14.0" onKeyPressed="#closeKey" onMouseClicked="#close" prefHeight="26.0" prefWidth="26.0">
+                     <children>
+                        <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="1.0" layoutY="1.0" onMouseClicked="#close" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
                </children>
             </Pane>
-            <Pane fx:id="inputRimQuantita" prefHeight="768.0" prefWidth="1024.0" scaleX="0.0" scaleY="0.0" visible="false">
+            <Pane fx:id="inputRimQuantita" onKeyPressed="#closeKey" prefHeight="768.0" prefWidth="1024.0" visible="false">
                <children>
                   <Pane opacity="0.97" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #1a1726;" />
-                  <Button layoutX="462.0" layoutY="717.0" mnemonicParsing="false" onAction="#aggiungiQuantita" prefHeight="37.0" prefWidth="101.0" style="-fx-background-color: #f1c232; -fx-background-radius: 10PX;" text="CONFERMA">
+                  <Button layoutX="462.0" layoutY="717.0" mnemonicParsing="false" onAction="#rimuoviQuantita" prefHeight="37.0" prefWidth="101.0" style="-fx-background-color: #f1c232; -fx-background-radius: 10PX;" text="CONFERMA">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="988.0" layoutY="10.0" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0" />
-                  <TextField alignment="CENTER" layoutX="423.0" layoutY="361.0" prefHeight="47.0" prefWidth="179.0" promptText="Inserisci Quantita'" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;">
+                  <TextField fx:id="rimQuantita" alignment="CENTER" layoutX="423.0" layoutY="361.0" prefHeight="47.0" prefWidth="179.0" promptText="Inserisci Quantita'" style="-fx-background-color: #674ea7; -fx-background-radius: 10px;">
                      <font>
                         <Font name="Arial Bold" size="15.0" />
                      </font>
@@ -145,6 +170,14 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </padding>
                   </TextField>
+                  <Pane layoutX="987.0" layoutY="9.0" onKeyPressed="#closeKey" onMouseClicked="#close" prefHeight="26.0" prefWidth="26.0">
+                     <children>
+                        <SVGPath content="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" fill="#b4a7d6" fillRule="EVEN_ODD" layoutX="1.0" layoutY="1.0" onMouseClicked="#close" stroke="#b3a7d4" strokeLineJoin="BEVEL" strokeWidth="2.0" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Pane>
                </children>
             </Pane>
          </children>

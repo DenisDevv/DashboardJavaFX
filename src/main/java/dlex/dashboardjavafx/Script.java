@@ -10,6 +10,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -29,11 +30,15 @@ public class Script {
     @FXML
     private TextField addQuantita;
     @FXML
+    private TextField rimQuantita;
+    @FXML
     private LineChart<String, Number> lineChart;
     @FXML
     private Pane inputAggQuantita;
     @FXML
-    protected void login() {
+    private Pane inputRimQuantita;
+    @FXML
+    protected void loginMouse() {
         if (username.getText().equals("denis") && password.getText().equals("denis1234")) {
             try {
                 dashboard();
@@ -42,6 +47,20 @@ public class Script {
             }
         } else {
             message.setText("Credenziali errate");
+        }
+    }
+    @FXML
+    protected void login(KeyEvent event) {
+        if (event.getCode().toString().equals("ENTER")) {
+            if (username.getText().equals("denis") && password.getText().equals("denis1234")) {
+                try {
+                    dashboard();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                message.setText("Credenziali errate");
+            }
         }
     }
     public void dashboard() throws IOException {
@@ -72,16 +91,44 @@ public class Script {
         popIn(inputAggQuantita);
     }
     @FXML
+    protected void rimuoviSaldo(){
+        popIn(inputRimQuantita);
+    }
+    @FXML
     protected void aggiungiQuantita() {
-        int saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
-        int quantita = Integer.parseInt(addQuantita.getText());
-        addQuantita.setText("");
-        saldo.setText(saldoAttuale + quantita + "$");
-        popOut(inputAggQuantita);
+        if (addQuantita.getText().isEmpty()) {
+            close();
+        } else {
+            int saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
+            int quantita = Integer.parseInt(addQuantita.getText());
+            addQuantita.setText("");
+            saldo.setText(saldoAttuale + quantita + "$");
+            popOut(inputAggQuantita);
+        }
+    }
+    @FXML
+    protected void rimuoviQuantita() {
+        if (rimQuantita.getText().isEmpty()) {
+            close();
+        } else {
+            int saldoAttuale = Integer.parseInt(saldo.getText().substring(0, saldo.getText().length() - 1));
+            int quantita = Integer.parseInt(rimQuantita.getText());
+            rimQuantita.setText("");
+            saldo.setText(saldoAttuale - quantita + "$");
+            popOut(inputRimQuantita);
+        }
     }
     @FXML
     protected void close() {
+        popOut(inputRimQuantita);
         popOut(inputAggQuantita);
+    }
+    @FXML
+    protected void closeKey(KeyEvent event) {
+        if (event.getCode().toString().equals("ESCAPE")) {
+            popOut(inputRimQuantita);
+            popOut(inputAggQuantita);
+        }
     }
     public void popIn(Pane pane) {
         pane.setVisible(true);
